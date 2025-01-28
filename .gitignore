@@ -1,0 +1,22 @@
+# Ignore virtual environment folder
+venv/
+
+# Ignore environment variable file
+.env
+
+# Python bytecode files
+*.pyc
+__pycache__/
+
+# Cache files
+*.cache
+*.log
+
+# Ignore IDE specific files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Ignore macOS specific files
+.DS_Store
