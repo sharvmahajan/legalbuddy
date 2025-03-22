@@ -12,7 +12,7 @@ from langchain.chains import create_retrieval_chain
 from langchain_community.vectorstores import FAISS
 from langchain.document_loaders import PyPDFLoader, UnstructuredWordDocumentLoader, TextLoader, CSVLoader, UnstructuredExcelLoader
 from langchain.schema import Document
-from docx import Document as DocxDocument
+
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 import json
 
@@ -289,12 +289,7 @@ def process_uploaded_file(uploaded_file):
         elif file_extension == 'txt':
             loader = TextLoader(tmp_path)
             documents = loader.load()
-        elif file_extension == 'docx':
-            documents = []
-            doc = DocxDocument(tmp_path)
-            for para in doc.paragraphs:
-                if para.text.strip():
-                    documents.append(Document(page_content=para.text))
+        
         elif file_extension == 'csv':
             loader = CSVLoader(tmp_path)
             documents = loader.load()
@@ -364,8 +359,8 @@ st.markdown("## 👋 Hello! What do you want to know today?")
 
 # File Uploader
 uploaded_files = st.file_uploader(
-    "Upload your legal documents (PDF, DOCX, TXT, CSV, XLSX, etc.)", 
-    type=['pdf', 'txt', 'docx', 'csv', 'xlsx'], 
+    "Upload your legal documents (PDF, TXT, CSV, XLSX, etc.)", 
+    type=['pdf', 'txt', 'csv', 'xlsx'], 
     accept_multiple_files=True
 )
 
