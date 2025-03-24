@@ -17,7 +17,7 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 import json
 
 st.set_page_config(
-    page_title="glean",
+    page_title="LegalBuddy",
     layout="wide",
     initial_sidebar_state="expanded",
     menu_items={
@@ -161,7 +161,7 @@ st.markdown("""
 st.markdown("""
 <div class="navbar">
     <div class="navbar-content">
-        <h1 class="navbar-brand">📚 glean</h1>
+        <h1 class="navbar-brand">📚 LegalBuddy</h1>
     </div>
 </div>
 <div class="main-content">
@@ -540,4 +540,4 @@ if st.session_state.vectors is not None:
 
 # --------------------------- FOOTER ---------------------------
 st.markdown("---")
-st.markdown("Made with ❤ by Glean Team")
+st.markdown("Made with ❤ by LegalBuddy Team")
